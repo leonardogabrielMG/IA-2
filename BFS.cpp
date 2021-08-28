@@ -8,28 +8,22 @@ const int N = 8;
 
 vector<int> adj[N];
 vector<bool> visited;
-vector<int> dist;
-
-const int INF = 1e9;
 
 void bfs(int u){
-    dist.assign(N, INF);
-
     queue<int> q;
 
     q.push(u);
-
-    dist[u] = 0;
 
     while(!q.empty()){
         int v = q.front();
         q.pop();
 
+        visited[v] ;
+
         cout << v << " ";
 
         for(auto e : adj[v]){
-            if(dist[e] == INF){
-                dist[e] = dist[v] +1;
+            if(!visited[e]){
                 q.push(e);
             }
         }

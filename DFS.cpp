@@ -20,25 +20,6 @@ void dfs(int u){
     }
 }
 
-void dfsStacks(int u){
-    stack<int> s;
-    s.push(u);
-
-    while (!s.empty()) {
-        int v = s.top();
-        s.pop();
-        cout << v << " ";
-
-        visited[v] = true;
-
-        for (auto e : adj[v]) {
-            if(!visited[e]) {
-                s.push(e);
-            }
-        }
-    }
-}
-
 int main(){
     visited.assign(N, false);
 
